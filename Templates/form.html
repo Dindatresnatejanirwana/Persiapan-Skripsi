@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='WhatsApp Image 2023-07-15 at 01.00.33.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;}
+        #upper {
+            display: flex;
+            align-items: center;}
+        #gambar1 {
+            margin-right: 283px;
+            width: 150px;
+            height: 150px;}
+        #kalimat1 {
+            text-align: left;
+            margin-top: 70px;
+            font-size: 34px;}
+        #middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 30px;}
+        .form-input {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #E7E6E6;
+            padding: 10px;
+            border-radius: 5px;}
+        .form-input input {
+            border-radius: 5px;
+            border: 1px;
+            margin-top: 15px;
+            font-size: 15px;
+            padding: 7px;
+            width: 1200px;}
+        #button {
+            background-color: #af1015;
+            color: white;
+            padding: 10px 60px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-top: 78px;}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var button = document.getElementById("button");
+            button.addEventListener("click", function(event) {
+                var form = document.getElementById("form");
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    form.reportValidity();
+                } else {
+                    form.submit();}
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="upper">
+        <img id="gambar1" src="{{ url_for('static', filename='Logo-Primer-Utama-ITTelkom-Surabaya-White-300x300.png') }}" alt="Gambar1">
+        <h1 id="kalimat1">Form Pengajuan Judul Penelitian</h1>
+    </div>
+        <div id="middle">
+            <form id="form" method="POST" action="{{ url_for('form') }}">
+                <div class="form-input">
+                    <label for="nama">Nama Mahasiswa</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+                <div class="form-input">
+                    <label for="prodi">Program Studi</label>
+                    <input type="text" id="prodi" name="prodi" required>
+                </div>
+                <div class="form-input">
+                    <label for="judul">Judul Penelitian</label>
+                    <input type="text" id="judul" name="judul" required>
+                </div>
+                <div style="text-align: center;">
+                    <button id="button" type="submit">Cek Hasil</button>
+                </div>
+            </form>
+        </div>
+</body>
+</html>

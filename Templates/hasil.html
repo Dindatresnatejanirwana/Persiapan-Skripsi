@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='WhatsApp Image 2023-07-15 at 01.00.33.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;}
+        #upper {
+            display: flex;
+            align-items: center;}
+        #gambar1 {
+            margin-right: 283px;
+            width: 150px;
+            height: 150px;}
+        #kalimat1 {
+            text-align: left;
+            margin-top: 70px;
+            font-size: 34px;}
+        #output {
+            margin-top: 37px;
+            margin-left: 64px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;}
+        th, td {
+            padding-bottom: 10px;
+            margin-bottom: 10px;}
+        th {
+            padding-left: 10px;
+            position: relative;}
+        th::after {
+            content: ":";
+            position: absolute;
+            left: 120%;}
+        td {
+            padding-left: 80px;}
+        .rekomendasi-dosen {
+            margin-right: 400px;
+            font-weight: bold;
+            color: white;
+            font-size: 25px;}
+        .skor-rekomendasi-dosen {
+            font-weight: bold;
+            color: white;}
+        .rekomendasi-dosen-value {
+            margin-top: 35px;
+            margin-bottom: 30px;
+            font-size: 25px;}
+        #rekomendasi-dosen1 {
+            margin: 0 auto;
+            background-color: #af1015;
+            border-radius: 30px;
+            width: 1200px;
+            margin-bottom: 10px;}
+        #rekomendasi-dosen2 {
+            margin: 0 auto;
+            background-color: #af1015;
+            border-radius: 30px;
+            width: 1200px;}
+        #button {
+            background-color: #af1015;
+            color: white;
+            padding: 10px 73px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-top: 26px;}
+        </style>
+        <script>
+            function navigateToForm() {
+                window.location.href = "/";}
+        </script>
+</head>
+<body>
+    <div id="upper">
+        <img id="gambar1" src="{{ url_for('static', filename='Logo-Primer-Utama-ITTelkom-Surabaya-White-300x300.png') }}" alt="Gambar1">
+        <h1 id="kalimat1">Hasil Pengajuan Judul Penelitian</h1>
+    </div>
+        <div id="output">
+            <table>
+                <tr>
+                    <th>Nama Mahasiswa</th>
+                    <td>{{ nama_mahasiswa }}</td>
+                </tr>
+                <tr>
+                    <th>Program Studi</th>
+                    <td>{{ program_studi }}</td>
+                </tr>
+                <tr>
+                    <th>Judul Penelitian</th>
+                    <td>{{ judul_penelitian }}</td>
+                </tr>
+                <tr>
+                    <th>Rekomendasi Dosen</th>
+                </tr>
+            </table>
+        </div>
+        <div id="rekomendasi-dosen1">
+            <table>
+                <tr>
+                    <td class="kolom-background">
+                        <div class="rekomendasi-dosen-value">
+                            <span class="rekomendasi-dosen">{{ X1 }}</span>
+                            <span class="skor-rekomendasi-dosen">{{ X2 }}</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="rekomendasi-dosen2">
+            <table>
+                <tr>
+                    <td class="kolom-background">
+                        <div class="rekomendasi-dosen-value">
+                            <span class="rekomendasi-dosen">{{ Y1 }}</span>
+                            <span class="skor-rekomendasi-dosen">{{ Y2 }}</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    <div style="text-align: center;">
+        <button id="button" onclick="navigateToForm()">Home</button>
+    </div>
+</body>
+</html>

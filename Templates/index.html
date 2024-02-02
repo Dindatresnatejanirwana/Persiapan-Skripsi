@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='WhatsApp Image 2023-07-15 at 01.00.33.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;}
+        #upper {
+            display: flex;
+            align-items: center;}
+        #gambar1 {
+            margin-right: 240px;
+            width: 150px;
+            height: 150px;}
+        #kalimat1 {
+            text-align: left;
+            margin-top: 70px;
+            font-size: 34px;}
+        #middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;}
+        #gambar2 {
+            width: 275px;
+            height: 275px;}
+        #kalimat2 {
+            text-align: center;
+            font-size: 18px;
+            padding: 0px 100px;
+            border-radius: 20px;}
+        #button {
+            background-color: #af1015;
+            color: white;
+            padding: 10px 70px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-top: 40px;}
+    </style>
+    <script>
+        function navigateToForm() {
+            window.location.href = "/form";}
+    </script>
+</head>
+<body>
+    <div id="upper">
+        <img id="gambar1" src="{{ url_for('static', filename='Logo-Primer-Utama-ITTelkom-Surabaya-White-300x300.png') }}" alt="Gambar1">
+        <h1 id="kalimat1">SBM Rekomendasi Dosen Pembimbing</h1>
+    </div>
+        <div id="middle">
+            <img id="gambar2" src="{{ url_for('static', filename='online-education.png') }}" alt="Gambar2">
+            <div id="kalimat2">
+                <p>
+                <strong>Sistem Bantu Rekomendasi (SBM) Dosen Pembimbing merupakan sistem untuk</strong><br>
+                <strong>membantu mahasiswa untuk menemukan dosen pembimbing yang tepat untuk</strong><br>
+                <strong>pengerjaan Tugas Akhir (TA). Ajukan judulmu sekarang untuk mengetahui dosen</strong><br>
+                <strong>pembimbing yang tepat!</strong>
+                </p>
+            </div>
+        </div>
+    <div style="text-align: center;">
+        <button id="button" onclick="navigateToForm()">Ajukan</button>
+    </div>
+</body>
+</html>
